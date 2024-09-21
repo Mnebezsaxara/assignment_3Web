@@ -1,0 +1,155 @@
+header {
+    position: absolute; /* или fixed, если нужно зафиксировать хэдер при прокрутке */
+    top: 0; /* Убедитесь, что он в верхней части */
+    left: 0;
+    right: 0;
+    z-index: 7; /* Выше, чем у .hero */ /* Полупрозрачный фон для улучшения читаемости текста */
+    padding: 10px 0; /* Добавьте отступы, если нужно */
+}
+.custom__header {
+    position: static;
+    background-color: #0a1f44;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.logo span {
+    font-size: 20px;
+    font-weight: 500;
+}
+.logo__sport {
+    color: #f2f2f2;
+}
+.logo__life {
+    color: #ffaa00d9;
+}
+.nav-link {
+    color: #f2f2f2;
+}
+.nav-link:hover,
+.nav-link:focus {
+    color: #ffaa00d9;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #ffaa00d9;
+}
+/* Hero Section with Gradient */
+.hero {
+    position: relative; /* Необходимо для абсолютного позиционирования псевдоэлемента */
+    background-image: url("../img/sportlifebg.jpg"); /* Замените на путь к вашему изображению */
+    background-size: cover; /* Чтобы изображение заполнило весь экран */
+    background-position: center; /* Центрируем изображение */
+    color: #f2f2f2; /* Soft white text */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero::before {
+    content: ""; /* Псевдоэлемент должен иметь контент */
+    position: absolute; /* Абсолютное позиционирование для покрытия фона */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный затемняющий слой */
+    z-index: 1; /* Чтобы слой был ниже текста */
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+    position: relative; /* Чтобы текст был над затемняющим слоем */
+    z-index: 2; /* Чтобы текст был выше затемняющего слоя */
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+.hero .btn {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    background-color: #ffaa00d9;
+    color: #f2f2f2;
+    border: none;
+    padding: 10px 20px;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #0a1f44;
+    color: #00d9ff;
+}
+
+/* Section Styling */
+#about,
+#cta {
+    padding: 60px 0;
+    background-color: #f2f2f2; /* Soft White */
+    text-align: center;
+}
+/* Custom carousel styling */
+/* Custom carousel styling */
+.my-carousel {
+    width: 60%;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+}
+#services {
+    padding: 60px 0;
+    background-color: #e5e5e5; /* Light Gray */
+    text-align: center;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    box-shadow: 0px 4px 15px rgba(0, 31, 68, 0.1); /* Subtle shadow */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 31, 68, 0.15); /* Slightly stronger shadow on hover */
+}
+
+.card-title {
+    color: #0a1f44;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: #0a1f44; /* Dark navy */
+    color: #f2f2f2; /* Soft white text */
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Button Hover */
+.btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
